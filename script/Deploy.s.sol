@@ -17,6 +17,12 @@ contract DeployScript is Script {
         vm.startBroadcast(deployerPrivateKey);
 
         Bank newBank = new Bank{ salt: SALT }();
+        /**
+         * == Logs ==
+         *     Bank deployed to: 0x543FF5baFD7fcD727711900A48F040B4405D4618
+         *     Deployed by: 0x059dC4EEe9328A9f163a7e813B2f5B4A52ADD4dF
+         */
+        // https://sepolia.arbiscan.io/address/0x543FF5baFD7fcD727711900A48F040B4405D4618
         console2.log("Bank deployed to:", address(newBank));
         console2.log("Deployed by:", deployerAddress);
 
